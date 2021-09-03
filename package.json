@@ -36,6 +36,7 @@
     "@vaadin/vaadin-time-picker": "2.4.0",
     "@vaadin/vaadin-upload": "4.4.2",
     "@webcomponents/webcomponentsjs": "^2.2.10",
+    "construct-style-sheets-polyfill": "2.4.16",
     "lit-element": "2.5.1",
     "lit-html": "1.4.1"
   },
@@ -121,6 +122,6 @@
       "webpack-dev-server": "3.11.0",
       "webpack-merge": "4.2.2"
     },
-    "hash": "38110f35644ee553847c7e5b2ac0a461390c22bffae3f95acccf629309605894"
+    "hash": "b41fb2a007a53f25cfc53c64090717bbf77c0edf95bc045bca5a666e22841a97"
   }
 }
