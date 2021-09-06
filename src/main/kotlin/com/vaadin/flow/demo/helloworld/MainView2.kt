@@ -27,7 +27,7 @@ import com.vaadin.flow.router.Route
 /**
  * The main view contains a button and a click listener.
  */
-@Route("2")
+@Route("2 native")
 @CssImport.Container(
     value = [  // repeatable annotations are not supported by Kotlin, please vote for https://youtrack.jetbrains.com/issue/KT-12794
         CssImport("./styles/shared-styles.css"),

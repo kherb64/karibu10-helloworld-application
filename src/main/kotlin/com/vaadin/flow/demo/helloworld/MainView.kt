@@ -27,7 +27,7 @@ import com.vaadin.flow.server.PWA
 /**
  * The main view contains a button and a click listener.
  */
-@Route("")
+@Route("1 karibu")
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
 @CssImport.Container(value = [  // repeatable annotations are not supported by Kotlin, please vote for https://youtrack.jetbrains.com/issue/KT-12794
     CssImport("./styles/shared-styles.css"),
