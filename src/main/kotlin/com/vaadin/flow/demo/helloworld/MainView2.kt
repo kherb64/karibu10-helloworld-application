@@ -17,6 +17,7 @@ package com.vaadin.flow.demo.helloworld
 
 import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
+import com.vaadin.flow.component.button.ButtonVariant
 import com.vaadin.flow.component.dependency.CssImport
 import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.orderedlayout.VerticalLayout
@@ -34,23 +35,16 @@ import com.vaadin.flow.router.Route
     ]
 )
 class MainView2 : VerticalLayout() {
-    private var nameField: TextField = TextField("Your name2")
-    private lateinit var greetButton: Button
+    // Use TextField for standard text input
+    private var nameField = TextField("Your name2")
 
+    // Use Button for a clickable button
+    private var greetButton = Button("Say hello2") { addClickShortcut(Key.ENTER) }
 
     init {
+        greetButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY)
         // Use custom CSS classes to apply styling. This is defined in shared-styles.css.
         addClassName("centered-content")
-
-        // Use TextField for standard text input
-
-        // Use Button for a clickable button
-        greetButton = Button("Say hello2")
-        {
-            // ? this.addThemeVariants(ButtonVariant.LUMO_PRIMARY)
-            addClickShortcut(Key.ENTER)
-        }
-
         add(nameField, greetButton)
 
         // attach functionality to the UI components.
