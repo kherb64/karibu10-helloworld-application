@@ -1,5 +1,6 @@
 package at.co.sdt.herb
 
+import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.dependency.CssImport
 import com.vaadin.flow.component.dialog.Dialog
@@ -31,7 +32,7 @@ class MainView5 : VerticalLayout() {
 }
 
 class ConfirmDialog : Dialog() {
-    val confirmText = Paragraph("Are you sure you want to leave this page?")
+    private val confirmText = Paragraph("Are you sure you want to leave this page?")
     private val confirmButton = Button("Confirm")
     private val cancelButton = Button("Cancel")
 
@@ -42,11 +43,19 @@ class ConfirmDialog : Dialog() {
     private val dialogButtons = HorizontalLayout(confirmButton, cancelButtonWrapper)
 
     init {
+        confirmButton.addClickListener {
+            Notification.show("Confirmed", 2500, Notification.Position.MIDDLE)
+            close()
+        }
+        cancelButton.addClickListener { close() }
+
         // Set the wrapper flex alignment to end (right)
         cancelButtonWrapper.setJustifyContentMode(FlexComponent.JustifyContentMode.END)
         dialogButtons.expand(cancelButtonWrapper)
 
         // Add the components to the dialog
         add(confirmText, dialogButtons)
+        isCloseOnEsc = true
+        isCloseOnOutsideClick = false
     }
 }
