@@ -13,10 +13,8 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.training.intro
+package com.vaadin.training.layouting
 
-import com.vaadin.flow.component.Component
-import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.button.ButtonVariant
 import com.vaadin.flow.component.combobox.ComboBox
@@ -83,6 +81,7 @@ class ProductFlexForm : VerticalLayout() {
 
         val flex = FlexLayout(name, desc, price, priceSfx, avail, cat)
         flex.justifyContentMode = FlexComponent.JustifyContentMode.START
+        flex.alignItems = FlexComponent.Alignment.BASELINE
         flex.flexWrap = FlexLayout.FlexWrap.WRAP
 
         add(flex, HorizontalLayout(btnSave, btnCancel))

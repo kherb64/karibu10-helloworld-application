@@ -1,4 +1,4 @@
-package at.co.sdt.herb
+package at.co.sdt.herb.vaadin.experiment
 
 import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
