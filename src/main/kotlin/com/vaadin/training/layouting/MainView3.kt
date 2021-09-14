@@ -15,6 +15,7 @@
  */
 package com.vaadin.training.layouting
 
+import com.vaadin.flow.component.AbstractField
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.button.ButtonVariant
 import com.vaadin.flow.component.combobox.ComboBox
@@ -54,10 +55,22 @@ class ProductForm : VerticalLayout() {
     // 0.0.1 ???
     private val avail = DatePicker("Availability")
     private val cat = ComboBox<String>("Category")
-    private val btnSave = Button(        "Save"    )
+    private val btnSave = Button("Save")
     private val btnCancel = Button("Cancel")
 
     init {
+        name.addValueChangeListener {
+            println("value for ${it.source.label} has changed from ${it.oldValue} to ${it.value}")
+        }
+        price.addInputListener {
+            println("input for ${it.source.element.getProperty("label")} has changed to ${it.source.element.getProperty("value")}")
+        }
+        price.addValueChangeListener {
+            println("value for ${it.source.label} has changed from ${it.oldValue} to ${it.value}")
+        }
+        desc.addValueChangeListener {
+            println("value for ${it.source.label} has changed from ${it.oldValue} to ${it.value}")
+        }
         price.suffixComponent = priceSfx
         price.step = 0.01
         cat.setItems("A", "B", "C")
@@ -78,4 +91,5 @@ class ProductForm : VerticalLayout() {
         }
         add(name, desc, price, priceSfx, avail, cat, HorizontalLayout(btnSave, btnCancel))
     }
+
 }
