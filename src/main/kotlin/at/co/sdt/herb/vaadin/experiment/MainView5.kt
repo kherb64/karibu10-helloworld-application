@@ -1,6 +1,5 @@
 package at.co.sdt.herb.vaadin.experiment
 
-import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.dependency.CssImport
 import com.vaadin.flow.component.dialog.Dialog
@@ -20,8 +19,8 @@ import com.vaadin.flow.router.Route
     ]
 )
 class MainView5 : VerticalLayout() {
-    val btnDialog = Button("Dialog")
-    val confirmDialog = ConfirmDialog()
+    private val btnDialog = Button("Dialog")
+    private val confirmDialog = ConfirmDialog()
 
     init {
         btnDialog.addClickListener {
@@ -50,7 +49,7 @@ class ConfirmDialog : Dialog() {
         cancelButton.addClickListener { close() }
 
         // Set the wrapper flex alignment to end (right)
-        cancelButtonWrapper.setJustifyContentMode(FlexComponent.JustifyContentMode.END)
+        cancelButtonWrapper.justifyContentMode = FlexComponent.JustifyContentMode.END
         dialogButtons.expand(cancelButtonWrapper)
 
         // Add the components to the dialog
